@@ -7,17 +7,16 @@ Quando("eu amasso {int} laranjas") do |amassei|
 end
   
 Entao("eu verifico quantas laranjas sobraram no estoque.") do
-    expect(@total).to eq 8
+   expect(@total).to eq 8
 end
   
-Quando("eu revendo {int} laranjas") do |qtd|
+Quando("eu revendo {int} laranjas") do |valor2|
     steps %Q{
-        Dado que eu tenho 10 laranjas no estoque.
+        Dado eu tenho 10 laranjas no estoque.
     }
-   @resultado = @laranjas - qtd
+   @resultado = @laranjas - valor2
 end
   
 Entao("eu verifico com quantas laranjas eu fiquei.") do
-    expect(@total).to eq 8
-
+   expect(@resultado).to eq 8
 end
