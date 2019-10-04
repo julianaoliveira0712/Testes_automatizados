@@ -1,13 +1,17 @@
 Dado("que eu tenho um usuario") do |table|
     @usuario = table.rows_hash['user']
     @senha = table.rows_hash['senha']
-    visit('http://moodle.bandtec.com.br/login/index.php')
+    #visit('http://moodle.bandtec.com.br/login/index.php')
+    home.load 
 end
-  
+
 Quando("eu faço login") do
-    fill_in 'username', with: @usuario
-    fill_in 'password', with: @senha
-    find('#loginbtn').click
+    home.logarUsuario('01182101','#Gf23785534809')     
+=begin
+fill_in 'username', with: @usuario
+fill_in 'password', with: @senha
+find('#loginbtn').click   
+=end 
     #find (:css,'input[value="Acessar"]').click
 end
   

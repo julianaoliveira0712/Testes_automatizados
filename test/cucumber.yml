@@ -1,0 +1,9 @@
+## YAML Templates
+---
+
+  default: -p for_ci -p homolog -p com_headless
+  pretty: --format pretty
+  for_ci: --format progress
+  homolog: ENVIRONMENT_TYPE=homolog
+  com_headless: HEADLESS=com_headless
+  sem_headless: HEADLESS=sem_headless
