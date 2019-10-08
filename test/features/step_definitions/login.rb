@@ -1,8 +1,9 @@
 Dado("que eu tenho um usuario") do |table|
     @usuario = table.rows_hash['user']
     @senha = table.rows_hash['senha']
+    @home = HomePage.new
     #visit('http://moodle.bandtec.com.br/login/index.php')
-    home.load 
+    @home.load 
 end
 
 Quando("eu faço login") do
@@ -17,7 +18,7 @@ end
   
 Entao("eu verifico se estou logado") do
     expect(page).to have_current_path('http://moodle.bandtec.com.br/', url: true)
-    #@div_curso = find('div[class="fa fa-warning"]')
+    @div_curso = find('div[class="fa fa-warning"]')
     #expect(@div_curso.text).to eql''
 
     sleep(10)
