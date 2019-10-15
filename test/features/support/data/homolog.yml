@@ -1,1 +1,3 @@
-#url_home: 'http://moodle.bandtec.com.br/login/index.php'
+#Seta uma url inicial na "url_home" que será utilizada para como ponto de acesso para logar
+url_home: 'http://moodle.bandtec.com.br/login/index.php'
+

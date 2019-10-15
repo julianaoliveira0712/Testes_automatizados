@@ -1,25 +1,17 @@
+#Passa os parametros da tabela de "login.feature" para as variaveis respectivas e inicia o objeto home
 Dado("que eu tenho um usuario") do |table|
-    @usuario = table.rows_hash['user']
-    @senha = table.rows_hash['senha']
-    @home = HomePage.new
-    #visit('http://moodle.bandtec.com.br/login/index.php')
-    @home.load 
+  @username = table.rows_hash['username']
+  @senha = table.rows_hash['senha']
+  home.load
 end
 
-Quando("eu faço login") do
-    home.logarUsuario('01182101','#Gf23785534809')     
-=begin
-fill_in 'username', with: @usuario
-fill_in 'password', with: @senha
-find('#loginbtn').click   
-=end 
-    #find (:css,'input[value="Acessar"]').click
+#passa os parametros para o metodo logar_usuario do objeto home
+Quando("eu faco login") do
+  @home.logar_usuario('01182101', '#Gf23785534809')
 end
-  
+
+#Verifica se page tem a url informada abaixo
 Entao("eu verifico se estou logado") do
-    expect(page).to have_current_path('http://moodle.bandtec.com.br/', url: true)
-    @div_curso = find('div[class="fa fa-warning"]')
-    #expect(@div_curso.text).to eql''
-
-    sleep(10)
+  expect(page).to have_current_path('http://moodle.bandtec.com.br/login/index.php', url: true)
 end
+ 

@@ -1,15 +1,15 @@
-
 Dir[File.join(File.dirname(__FILE__),
-                '../pages/*_page.rb')].each { |file| require file }
+    '../pages/*_page.rb')].each { |file| require file }
 
-
-module Pages  
+module Pages
     def home
-        @home ||= HomePage.new
+    @home ||= HomePage.new
     end
 
     def page_user
-        @page_user ||= PageUser.new
+        @pagina_usuario ||= PageUser.new
     end
 end
+
+
 
