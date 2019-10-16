@@ -11,6 +11,6 @@ Em seguida informamos no app_host a url do site e por fim, o tempo default que v
 
 Capybara.configure do |config|
     config.default_driver = :selenium_chrome
-    config.app_host = 'http://moodle.bandtec.com.br'
+    config.app_host = 'https://github.com'
     config.default_max_wait_time = 5
 end
